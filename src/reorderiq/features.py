@@ -81,7 +81,7 @@ def snapshot(
 ) -> pd.DataFrame:
     origin = pd.Timestamp(as_of)
     end = origin + pd.Timedelta(days=7)
-    if origin.tzinfo is not None or origin != origin.normalize() or origin.dayofweek != 0:
+    if origin.tzinfo is not None or origin != origin.normalize() or origin.day_of_week != 0:
         raise ValueError("Snapshot must be a Monday at midnight in source wall time")
     if end > pd.Timestamp(observation_end):
         raise ValueError("Label window is not fully observed")

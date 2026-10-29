@@ -90,6 +90,10 @@ Review verification: `python -m pytest -q -W error -p no:cacheprovider tests/tes
 - Fix: scripts/build_distribution.ps1 validates the absolute generated build path inside this project, refuses reparse points, removes that output and performs an isolated wheel build.
 - Regression: scripts/verify_distribution.py compares every packaged runtime file byte-for-byte with current source, checks bundled UI references/notices and verifies actual gzip/cache/version behavior.
 
+## B015 — Fresh pandas deprecated the weekday alias (fixed)
+
+Hosted Windows and Linux tests rejected `Timestamp.dayofweek` under warnings-as-errors. Use the equivalent supported `day_of_week` property in temporal-origin validation. Existing temporal and verification tests cover this path; no warning suppression or modeling change is introduced.
+
 ## B014 — Fresh CI environment required an explicit asyncio fixture loop scope (fixed)
 
 - Trigger: the first public GitHub Linux job ran pytest with warnings treated as errors in a fresh environment.
