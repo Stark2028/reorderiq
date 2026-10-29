@@ -1,5 +1,9 @@
 # Observed defects
 
+## B018 — Published README described deployed hosting as future work (fixed)
+
+The README linked the working AWS demo but its scope section still listed hosting as future work and described the application only as local. Updated the overview, walkthrough and deployment scope to match the deployed read-only portfolio demo, retaining shared-host, public-IP and production-readiness limits. Verified the public readiness endpoint and checked README links, assets, measured metrics and GitHub Markdown rendering.
+
 ## B001 — Windows CPU discovery fails under strict warnings (fixed)
 
 - Trigger: fit histogram gradient boosting under `pytest -W error` on this Windows host.

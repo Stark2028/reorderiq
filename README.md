@@ -1,116 +1,189 @@
 # ReorderIQ
 
+**Predict the next order. Inspect the evidence. Replay what happened.**
+
+A deployed retail data science application that ranks observed buyers by their probability of ordering in the next seven days. ReorderIQ connects audited transactions, SQL feature engineering, chronological model evaluation and calibrated probabilities to an interactive buyer review workspace.
+
 [![Checks](https://github.com/Stark2028/reorderiq/actions/workflows/ci.yml/badge.svg)](https://github.com/Stark2028/reorderiq/actions/workflows/ci.yml)
 
-**[Open the live AWS demo](https://reorderiq.65.0.103.235.sslip.io)** · [Deployment and rollback](deploy/aws/README.md)
+**[Live demo](https://reorderiq.65.0.103.235.sslip.io)** · [Measured results](reports/RESULTS.md) · [Model card](docs/MODEL_CARD.md) · [Run locally](#run-locally) · [Deployment](deploy/aws/README.md)
 
-**Which observed buyers are likely to order in the next seven days? Inspect the prediction, then replay what happened.**
+![ReorderIQ review queue showing ranked buyers, calibrated reorder probabilities and historical purchase context](verification/refinement-browser/desktop-queue.png)
 
-A complete local data science application: official retail transactions, SQL features, chronological model comparison, independent probability calibration, and a React/TypeScript review workspace with Framer Motion. Built as an independent portfolio study inspired by predictive buying research at Udaan.
+**36,553 orders · 5,851 observed buyers · 17 historical features · 4 candidate models**
 
-![Refined historical buyer review workspace](verification/refinement-browser/desktop-queue.png)
+## Measured results
 
-## Start locally
+Gradient boosting was selected on development folds **before** the final holdout. All candidates below were evaluated on the same **39,754 buyer-weeks, 3,874 distinct buyers and 13 weekly origins**.
 
-Python 3.12 is the verified runtime. From this directory in PowerShell:
+| Candidate | Mean weekly average precision ↑ | Brier loss ↓ | Precision@50 ↑ |
+|---|---:|---:|---:|
+| Recency baseline | 0.1254 | 0.0927 | 8.9% |
+| Empirical Bayes Gamma-Poisson | 0.2892 | 0.0854 | 57.4% |
+| Logistic regression | 0.3036 | 0.0844 | 57.1% |
+| **Histogram gradient boosting** | **0.3132** | **0.0841** | **59.2%** |
+
+Metrics are computed per week and then equally averaged. **59.2% precision@50** means that, on average, about 30 of the 50 highest-ranked buyers placed an eligible order in the following week. It does not measure orders caused by contacting them.
+
+Against Gamma-Poisson, gradient boosting improves mean weekly average precision by **0.0240**. Its precision@50 difference is **+1.85 percentage points**, with a four-week moving-block temporal stability interval of **−0.77 to +3.38 points**. That interval spans zero; the observed top-50 gain remains uncertain. [Full results and interpretation →](reports/RESULTS.md)
+
+## Explore the demo
+
+No account or API key is needed. The live application serves the recorded, verified historical experiment.
+
+1. **Review the queue.** Choose a historical Monday, model and review capacity. Inspect ranked buyers and their pre-cutoff purchase history.
+2. **Reveal the next week.** Show whether each selected buyer actually ordered. Changing the date resets the reveal state.
+3. **Inspect model evidence.** Compare ranking performance, calibration, buyer cohorts and feature importance. This view always evaluates the development-selected model, independently of the queue's model filter.
+4. **Export your view.** Download a CSV matching the active filters and reveal state, or read the source audit under **Method & source**.
+
+The workspace includes mobile buyer inspection, keyboard navigation, light/dark themes and reduced-motion support. Failed queries disable stale exports and offer a retry.
+
+<details>
+<summary>More views: model evidence, dark theme and mobile inspection</summary>
+
+**Model evidence**
+
+![Final-holdout comparison, weekly performance, probability calibration and buyer cohort analysis](verification/refinement-browser/desktop-evidence.png)
+
+**Dark theme**
+
+![ReorderIQ buyer review workspace in dark mode](verification/refinement-browser/desktop-dark.png)
+
+**Mobile buyer inspection**
+
+<img src="verification/refinement-browser/mobile-buyer.png" alt="Mobile buyer sheet with historical purchase details and accessible paging controls" width="360">
+
+</details>
+
+## Architecture
+
+```mermaid
+flowchart TD
+    A["UCI retail transactions"] --> B["Audit and point-in-time SQL features"]
+    B --> C["Development: fit, calibrate and select"]
+    C --> D["Frozen final temporal holdout"]
+    D --> E["Hash-checked run artifacts"]
+    E --> F["Read-only FastAPI and React replay"]
+    E --> G["Independent evidence recomputation"]
+```
+
+| Layer | Implementation |
+|---|---|
+| Data | Python, pandas, NumPy, SQLite SQL, Parquet; sequential cleaning audit and source hashes |
+| Modeling | scikit-learn, SciPy; recency, empirical Bayes Gamma-Poisson, logistic regression and histogram gradient boosting |
+| Evaluation | Temporal folds, independent probability calibration, weekly ranking metrics, Brier loss, cohorts and paired time-block intervals |
+| Application | FastAPI, React, TypeScript, Vite, Motion for React (formerly Framer Motion) |
+| Delivery | Docker, AWS EC2 and Caddy HTTPS; GitHub Actions on Linux/Windows plus frontend checks |
+
+**Modeling runs offline.** HTTP requests read verified predictions and historical orders; they never train a model or load joblib bundles. Frontend and API share one origin. Hashed production assets are cached, API responses use `no-store`, and concurrent first requests share one artifact loader.
+
+### Temporal evaluation
+
+The target is **at least one eligible positive merchandise order in the next seven days**, among previously observed buyers whose last qualifying order was within 180 days.
+
+| Boundary | Enforced rule |
+|---|---|
+| Historical features | Only events with `ordered_at < as_of` |
+| Outcome window | `as_of <= ordered_at < as_of + 7 days` |
+| Label maturity | The full seven-day outcome window must be observed before evaluation |
+| Model selection | Two development folds; a separate calibration interval in each fold; selection frozen before final evaluation |
+
+The 17 features cover recency, observed tenure, purchase frequency, spend, basket characteristics and reorder cadence. SQL computes historical aggregates and future labels separately. The final holdout contains Mondays from **5 September through 28 November 2011**; models remain frozen within each fold.
+
+`verify` goes beyond checking hashes: it rebuilds weekly eligible populations, historical features and future order labels from saved orders, checks identical buyer/date keys across all candidates, and recomputes reported metrics. [Architecture and API contracts](docs/ARCHITECTURE.md) · [Exact evaluation protocol](MASTER_PLAN.md)
+
+## Run locally
+
+Use **Python 3.12**. Node is needed only when editing the frontend; the production interface is already included. No external database or API key is required.
+
+```sh
+git clone https://github.com/Stark2028/reorderiq.git
+cd reorderiq
+```
+
+<details open>
+<summary>Windows / PowerShell</summary>
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.lock
 .\.venv\Scripts\python.exe -m pip install --no-deps -e .
 .\.venv\Scripts\python.exe -m reorderiq.cli run
-.\start.ps1
+.\.venv\Scripts\python.exe -m reorderiq.cli serve
 ```
 
-Open **http://127.0.0.1:8010**. The first experiment downloads the official UCI archive (~43 MB), reads both workbook sheets and creates local artifacts. Later runs use hash-checked caches. A prepared experiment already exists on the development machine; `start.ps1` can serve it immediately if the required packages are available.
+</details>
 
-For macOS/Linux, activate `.venv`, install the same requirements/project and run `python -m reorderiq.cli serve`. No API keys or external database service are needed. The committed React interface is prebuilt, so serving it requires only Python. Browser checks require `python -m playwright install chromium` once if Chromium is not installed.
+<details>
+<summary>macOS / Linux</summary>
 
-## Frontend development
+```sh
+python3.12 -m venv .venv
+.venv/bin/python -m pip install -r requirements.lock
+.venv/bin/python -m pip install --no-deps -e .
+.venv/bin/python -m reorderiq.cli run
+.venv/bin/python -m reorderiq.cli serve
+```
 
-Node 24 is the verified build runtime. From this directory:
+</details>
 
-```powershell
+Open **http://127.0.0.1:8010**. The first `run` downloads the official UCI archive (~43 MB), reads both workbook sheets, prepares data, fits/calibrates the candidates and writes a completed experiment. Later runs reuse hash-checked data caches. Source downloads and generated runs are intentionally excluded from Git.
+
+`runs/latest.json` selects the last completed experiment. An incomplete or corrupted run produces an explicit unavailable response rather than synthetic data. Restart the server to adopt a different completed run.
+
+### Verification and frontend development
+
+Activate your virtual environment before these commands:
+
+```sh
+python -m reorderiq.cli verify
+python -m pytest -q -W error --basetemp=.test-tmp-local
+python -m ruff check src tests scripts
+```
+
+Recorded verification: **42 Python tests, 4 frontend request-state tests and 12 browser flows**. The public AWS deployment passed the browser flows with **zero JavaScript errors**, and its experiment was independently reverified inside the deployed container. These are recorded checks; the CI badge above shows the latest hosted status. [Deployment evidence](verification/DEPLOYMENT.md) · [Local refinement evidence](verification/REFINEMENT.md)
+
+To run browser checks, install Chromium once with `python -m playwright install chromium`. With the app running:
+
+```sh
+python scripts/browser_check.py
+```
+
+For frontend changes, use **Node 24**:
+
+```sh
 cd frontend
 npm ci
-npm run typecheck
+npm run format:check
 npm test -- --maxWorkers=1
 npm run build
-cd ..
-.\start.ps1
 ```
 
-`npm run build` compiles React, TypeScript, Motion for React (formerly Framer Motion), local fonts and lazy evidence/method views into the Python package. `npm run dev` runs Vite on port 3010 with API requests proxied to the local Python server. `npm run format:check` keeps the source consistent. Dependencies are recorded in frontend/package-lock.json.
+`npm run dev` starts Vite on port 3010 and proxies API requests to the local Python server. `npm run build` type-checks the frontend and packages production assets into the Python application. Python dependencies are pinned in `requirements.lock`; frontend dependencies are pinned in `frontend/package-lock.json`.
 
-## What is implemented
+## Navigate the repository
 
-- Official source download, SHA-256 provenance, sequential cleaning audit and invoice-level purchase events.
-- Inspectable SQLite SQL features at weekly Monday cutoffs. Strict historical features, matured seven-day labels and a documented eligible population.
-- Recency, empirical Bayes Gamma-Poisson, logistic regression and histogram gradient boosting with fixed settings.
-- Two development folds, independent calibration in each fold, and a later final temporal holdout. Choice is persisted before final fitting.
-- Weekly average precision, Brier loss, calibration bins, precision/recall/lift at fixed review capacities, cohort analysis and paired temporal stability intervals.
-- Buyer review queue with date/model/capacity/search/cohort controls, pre-cutoff history, explicit outcome reveal, CSV export, evidence and methodology views.
-- Refined light/dark themes, editorial typography, restrained motion, keyboard-inspectable charts and a mobile buyer sheet with focus restoration. Reduced motion is respected.
-- Current-query guards prevent stale exports/details. Recoverable artifact errors, startup load locking, strict label checks, gzip compression and hashed-asset caching improve reliability.
-- Hash-checked immutable run artifacts, source snapshots, model bundles, a full evidence verifier and engineering handoff records.
+| Start here | What you will find |
+|---|---|
+| [Measured results](reports/RESULTS.md) / [figures](reports/figures/) | Actual final-holdout comparisons, denominators and uncertainty |
+| [Data card](docs/DATA_CARD.md) / [model card](docs/MODEL_CARD.md) | Source, target definition, selection protocol and limitations |
+| [Architecture](docs/ARCHITECTURE.md) | Pipeline, artifact lifecycle, client behavior and API contracts |
+| [SQL features](src/reorderiq/sql/) / [models](src/reorderiq/models.py) | Inspectable feature engineering and candidate implementations |
+| [Evidence verifier](src/reorderiq/verify.py) / [tests](tests/) | Rebuilt labels/features/metrics and regression checks |
+| [Frontend](frontend/src/) | Typed request state, buyer replay, evidence views and motion |
+| [Deployment runbook](deploy/aws/README.md) | Private artifact transfer, readiness checks, HTTPS activation and rollback |
+| [Engineering records](docs/HANDOFF.md) | Handoff context, with [plan](MASTER_PLAN.md), [checklist](TODO.md), [bugs](BUGS.md) and [traps](TRAPS.md) |
 
-## Measured result
+Each completed run preserves configuration, data/code fingerprints, the frozen selection record, source snapshot, predictions, model bundles and measured reports. Application v0.2 is documented separately from the original experiment's source snapshot; UI and serving improvements do not rewrite experimental provenance.
 
-The official source normalizes to **36,553 orders / 5,851 buyers**. The final evaluation contains **39,754 buyer-weeks, 3,874 distinct buyers and 13 weekly origins**. Gradient boosting was selected on development data before the final holdout.
+## Data, scope and attribution
 
-| Model | Mean weekly average precision | Brier loss ↓ | Precision @50 |
-|---|---:|---:|---:|
-| Recency | 0.1254 | 0.0927 | 8.9% |
-| Gamma-Poisson | 0.2892 | 0.0854 | 57.4% |
-| Logistic regression | 0.3036 | 0.0844 | 57.1% |
-| Gradient boosting | **0.3132** | **0.0841** | **59.2%** |
+**Source:** Chen, D. (2012), [Online Retail II](https://archive.ics.uci.edu/dataset/502/online+retail+ii), UCI, DOI:10.24432/C5CG6D, **CC BY 4.0**. Its 1,067,371 invoice lines come from a UK giftware retailer in 2009–2011; many customers were wholesalers. Currency is GBP. After the documented cleaning and aggregation rules, the study contains 36,553 eligible orders and 5,851 observed buyers.
 
-These are predictive metrics on historical public data. Precision@50 is the average fraction of the selected 50 buyers who actually ordered, not classification accuracy or orders caused by contact. Compared with Gamma-Poisson, the mean AP difference is +0.0240; the top-50 precision difference is +1.85 percentage points, with a temporal stability interval spanning zero. See [measured results](reports/RESULTS.md) and [model card](docs/MODEL_CARD.md).
+This is an independent portfolio study inspired by De, Singh and Patel's [predictive buying research in B2B e-commerce](https://arxiv.org/html/2403.07843v1). It uses public data, is not affiliated with Udaan, and does not reproduce the paper's private dataset or reported business impact.
 
-## Reproduce and verify
+The model predicts observed purchases. There is no randomized contact history, so it cannot estimate incremental outreach effects or revenue. Missing customer IDs, left-truncated buyer histories, seasonal drift and the historical UK domain limit generalization. Returns are not netted into a profit target, and first-seen tenure is not account registration. New model tuning requires a new untouched evaluation period or source.
 
-```powershell
-.\.venv\Scripts\python.exe -m reorderiq.cli prepare
-.\.venv\Scripts\python.exe -m reorderiq.cli run
-.\.venv\Scripts\python.exe -m reorderiq.cli verify
-.\.venv\Scripts\python.exe -m pytest -q -W error --basetemp=.test-tmp-local
-.\.venv\Scripts\python.exe -m ruff check src tests scripts
-.\.venv\Scripts\python.exe scripts/export_figures.py
-```
+The public demo is hosted on AWS and is read-only historical evidence. Outcome reveal is an educational control, not authentication. The deployment shares one host and reverse proxy, depends on the host retaining its public IP, and is not highly available. Live retailer integration, authentication, scheduled refresh and causal experiments remain future work.
 
-With the local server running, run `python scripts/browser_check.py` for desktop/mobile replay, filtering, export freshness, modal focus, normal/reduced motion and recovery checks. The refined application passes **42 Python tests, 4 frontend tests and 12 browser flows**. [Refinement verification](verification/REFINEMENT.md) records local results; [original verification](verification/VERIFICATION.md) preserves the initial experiment/build record. [GitHub Actions](https://github.com/Stark2028/reorderiq/actions) runs the Python and frontend CI checks.
-
-To package changes on Windows, run `.\scripts\build_distribution.ps1`, then `python scripts/verify_distribution.py` with the local server running. The clean-build step removes only verified generated setuptools output, preventing obsolete UI files from entering a repeated wheel build. Distribution verification compares every shipped runtime file against current source and checks real gzip/cache/version behavior.
-
-Each `runs/<id>/` includes config, source/data/code hashes, source archive, selection record, predictions, snapshots, orders, calibrated model bundles, JSON/Markdown report and a completion manifest. `runs/latest.json` selects the last completed run. The API never trains a model or loads joblib files. A failed or corrupted experiment is explicitly unavailable; it does not trigger a synthetic fallback.
-
-## Project map
-
-```text
-MASTER_PLAN.md / TODO.md       Architecture, frozen protocol and phase gates
-docs/HANDOFF.md               Portable project state and working procedure
-MEMORY.md / BUGS.md / TRAPS.md Local-only detailed memory, public defects and risk records
-src/reorderiq/ingest.py        Acquisition, normalization and audit
-src/reorderiq/sql/             Inspectable snapshot features
-src/reorderiq/features.py      Temporal/eligibility contracts
-src/reorderiq/models.py        Candidates and independent calibration
-src/reorderiq/metrics.py       Denominators, ranking and stability intervals
-src/reorderiq/pipeline.py      Reproducible experiment and artifact publication
-src/reorderiq/verify.py        Rebuild populations, labels, features and metrics
-src/reorderiq/api.py / web/    Local evidence API and packaged production interface
-frontend/src/                 Typed React components, request guards, themes and motion
-tests/                        Leakage, cleaning, models, metrics and API regressions
-docs/                         Data/model cards, architecture and interview notes
-reports/ / verification/      Shareable measured evidence and browser captures
-data/ / runs/                 Ignored local source data and experiment artifacts
-```
-
-## Data and scope
-
-[Online Retail II](https://archive.ics.uci.edu/dataset/502/online+retail+ii), Chen, D. (2012), DOI:10.24432/C5CG6D, **CC BY 4.0**. UK giftware transactions from 2009–2011; many customers were wholesalers. Currency is GBP. These are not Udaan transactions or current Indian kirana data. The target is a positive merchandise order placed; cancellations, adjustments and returns are not netted into a profit target. See [data card](docs/DATA_CARD.md).
-
-The dataset has no randomized contact history. Purchase propensity cannot establish the incremental effect of outreach. New-customer acquisition, causal targeting, live retailer integrations and production hosting are future work. Outcome reveal is a replay control, not an authorization boundary. The app defaults to loopback and has no authentication.
-
-Project motivation: De, Singh and Patel, [A Machine Learning and Empirical Bayesian Approach for Predictive Buying in B2B E-commerce](https://arxiv.org/html/2403.07843v1), 2024. ReorderIQ does not reproduce that paper's private dataset, modified model or reported business impact.
-
-Fonts: locally bundled IBM Plex Sans and Instrument Serif under their included OFL licenses. Runtime React, Motion and Lucide notices are bundled in src/reorderiq/web/ui/licenses/. Assistance: implementation and verification developed with OpenAI Codex; results are from actual local experiments and checks.
+**Licensing:** original project code is all rights reserved; see [LICENSE](LICENSE). Dataset, font and bundled runtime notices retain their respective licenses. IBM Plex Sans and Instrument Serif are bundled locally under OFL licenses. Implementation and verification were developed with OpenAI Codex assistance; reported results come from actual experiments and checks.

@@ -32,6 +32,12 @@ Tasks complete only after implementation and appropriate verification. See MEMOR
 - [x] Configure HTTPS without disrupting SagaAgent.
 - [x] Verify public API, twelve browser flows and document deployment/rollback.
 
+## GitHub README refinement — requested 2026-10-29
+
+- [x] Lead with the live demo, actual screenshots and measured results.
+- [x] Explain replay, temporal safeguards, architecture and metric limits.
+- [x] Verify links, evidence, setup commands and GitHub rendering; publish the update.
+
 ## Remaining future work
 
 - Real retailer-data validation on a new untouched period/source.
