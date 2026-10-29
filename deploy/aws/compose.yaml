@@ -1,0 +1,29 @@
+name: reorderiq
+services:
+  app:
+    build:
+      context: ../..
+    image: reorderiq:${REORDERIQ_REVISION:-local}
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp:size=32m,noexec,nosuid
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 640m
+    cpus: 0.75
+    pids_limit: 100
+    volumes:
+      - ../../artifacts:/artifacts:ro
+    networks:
+      proxy:
+        aliases: [reorderiq]
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: '3'
+networks:
+  proxy:
+    external: true
+    name: saga-agent_default

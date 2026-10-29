@@ -27,6 +27,13 @@ Tasks complete only after implementation and appropriate verification. See MEMOR
 
 ## Remaining future work
 
+## Hosted deployment — authorized 2026-10-29
+
+- [x] Inspect account access and existing host capacity.
+- [ ] Build an isolated, resource-bounded container with immutable verified artifacts.
+- [ ] Configure HTTPS without disrupting SagaAgent.
+- [ ] Verify public API, browser flows and document deployment/rollback.
+
 - Real retailer-data validation on a new untouched period/source.
 - Randomized contact experiment before outreach-effect claims.
 - Authentication, deployment and scheduled data refresh if production hosting is requested.

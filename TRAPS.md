@@ -34,6 +34,8 @@
 
 ## Implemented evidence (2026-10-29)
 
+- Hosting controls: keep original run manifests unchanged; mount serving artifacts read-only; reject unhealthy deployments before proxy activation; back up/validate/reload the shared proxy without restarting SagaAgent. Private transport URLs expire and stay outside Git. Preserve prior releases for rollback. Shared-host and public-IP stability remain limits.
+
 - T01–T05, T11, T15: temporal, cleaning/metric and API regression tests; `verify` independently rebuilds every final population/label/feature from accepted orders.
 - T06–T07, T17, T20: development-only selection guard, separate fit/calibration partitions, persisted selection hash and all candidate/raw probability metrics. No final-results-driven hyperparameter changes were made.
 - T08–T10, T12–T13, T16, T19: explicit data/model cards, source-aware UI, observed-tenure labeling, measured cohorts and descriptive temporal intervals. These controls document limits; they do not remove domain shift or identify causal effects.

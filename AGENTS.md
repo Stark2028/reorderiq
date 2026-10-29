@@ -12,4 +12,4 @@ Keep source data, machine-specific paths, virtual environments and generated run
 Document exact reproduction commands, measured results and remaining limits in MEMORY.md.
 Run meaningful regression checks for data contracts, temporal boundaries, evaluation and API behavior.
 Use deterministic seeds, explicit versions and immutable run artifacts. Do not train inside HTTP requests.
-The local app is the implementation target. Public GitHub source publication was explicitly authorized on 2026-10-29. Application hosting remains separate work.
+Public GitHub source publication and application deployment on Vercel/AWS/Render were explicitly authorized on 2026-10-29. AWS deployment uses an isolated ReorderIQ container on the existing host; preserve SagaAgent, its data and its proxy route.
