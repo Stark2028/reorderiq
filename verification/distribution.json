@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "wheel": "reorderiq-0.2.0-py3-none-any.whl",
+  "wheel_bytes": 387414,
+  "wheel_entries": 42,
+  "source_matching_package_files": 36,
+  "entry_javascript_bytes": 346423,
+  "entry_javascript_gzip_bytes": 111871,
+  "html_cache": "no-cache",
+  "api_cache": "no-store",
+  "hashed_asset_cache": "public, max-age=31536000, immutable",
+  "run_id": "20261029T092203635364Z-627414f3"
+}

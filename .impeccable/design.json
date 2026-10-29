@@ -1,0 +1,958 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-29T10:57:12.946Z",
+  "title": "Design System: ReorderIQ",
+  "extensions": {
+    "colorMeta": {
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Warm stone canvas",
+        "tonalRamp": [
+          "oklch(15.00% 0.0082 91.48)",
+          "oklch(26.43% 0.0082 91.48)",
+          "oklch(37.86% 0.0082 91.48)",
+          "oklch(49.29% 0.0082 91.48)",
+          "oklch(60.71% 0.0082 91.48)",
+          "oklch(72.14% 0.0082 91.48)",
+          "oklch(83.57% 0.0082 91.48)",
+          "oklch(95.00% 0.0082 91.48)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Pale work surface",
+        "tonalRamp": [
+          "oklch(15.00% 0.0054 95.10)",
+          "oklch(26.43% 0.0054 95.10)",
+          "oklch(37.86% 0.0054 95.10)",
+          "oklch(49.29% 0.0054 95.10)",
+          "oklch(60.71% 0.0054 95.10)",
+          "oklch(72.14% 0.0054 95.10)",
+          "oklch(83.57% 0.0054 95.10)",
+          "oklch(95.00% 0.0054 95.10)"
+        ]
+      },
+      "surface-pure": {
+        "role": "neutral",
+        "displayName": "Pure surface",
+        "tonalRamp": [
+          "oklch(15.00% 0.0000 0.00)",
+          "oklch(26.43% 0.0000 0.00)",
+          "oklch(37.86% 0.0000 0.00)",
+          "oklch(49.29% 0.0000 0.00)",
+          "oklch(60.71% 0.0000 0.00)",
+          "oklch(72.14% 0.0000 0.00)",
+          "oklch(83.57% 0.0000 0.00)",
+          "oklch(95.00% 0.0000 0.00)"
+        ]
+      },
+      "surface-soft": {
+        "role": "neutral",
+        "displayName": "Inset surface",
+        "tonalRamp": [
+          "oklch(15.00% 0.0067 97.35)",
+          "oklch(26.43% 0.0067 97.35)",
+          "oklch(37.86% 0.0067 97.35)",
+          "oklch(49.29% 0.0067 97.35)",
+          "oklch(60.71% 0.0067 97.35)",
+          "oklch(72.14% 0.0067 97.35)",
+          "oklch(83.57% 0.0067 97.35)",
+          "oklch(95.00% 0.0067 97.35)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Deep green ink",
+        "tonalRamp": [
+          "oklch(15.00% 0.0208 159.18)",
+          "oklch(26.43% 0.0208 159.18)",
+          "oklch(37.86% 0.0208 159.18)",
+          "oklch(49.29% 0.0208 159.18)",
+          "oklch(60.71% 0.0208 159.18)",
+          "oklch(72.14% 0.0208 159.18)",
+          "oklch(83.57% 0.0208 159.18)",
+          "oklch(95.00% 0.0208 159.18)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted olive-gray",
+        "tonalRamp": [
+          "oklch(15.00% 0.0176 136.15)",
+          "oklch(26.43% 0.0176 136.15)",
+          "oklch(37.86% 0.0176 136.15)",
+          "oklch(49.29% 0.0176 136.15)",
+          "oklch(60.71% 0.0176 136.15)",
+          "oklch(72.14% 0.0176 136.15)",
+          "oklch(83.57% 0.0176 136.15)",
+          "oklch(95.00% 0.0176 136.15)"
+        ]
+      },
+      "subtle": {
+        "role": "neutral",
+        "displayName": "Legible subtle olive-gray",
+        "tonalRamp": [
+          "oklch(15.00% 0.0189 133.94)",
+          "oklch(26.43% 0.0189 133.94)",
+          "oklch(37.86% 0.0189 133.94)",
+          "oklch(49.29% 0.0189 133.94)",
+          "oklch(60.71% 0.0189 133.94)",
+          "oklch(72.14% 0.0189 133.94)",
+          "oklch(83.57% 0.0189 133.94)",
+          "oklch(95.00% 0.0189 133.94)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Fine rule",
+        "tonalRamp": [
+          "oklch(15.00% 0.0149 115.05)",
+          "oklch(26.43% 0.0149 115.05)",
+          "oklch(37.86% 0.0149 115.05)",
+          "oklch(49.29% 0.0149 115.05)",
+          "oklch(60.71% 0.0149 115.05)",
+          "oklch(72.14% 0.0149 115.05)",
+          "oklch(83.57% 0.0149 115.05)",
+          "oklch(95.00% 0.0149 115.05)"
+        ]
+      },
+      "rule-strong": {
+        "role": "neutral",
+        "displayName": "Strong rule",
+        "tonalRamp": [
+          "oklch(15.00% 0.0185 124.01)",
+          "oklch(26.43% 0.0185 124.01)",
+          "oklch(37.86% 0.0185 124.01)",
+          "oklch(49.29% 0.0185 124.01)",
+          "oklch(60.71% 0.0185 124.01)",
+          "oklch(72.14% 0.0185 124.01)",
+          "oklch(83.57% 0.0185 124.01)",
+          "oklch(95.00% 0.0185 124.01)"
+        ]
+      },
+      "rail": {
+        "role": "primary",
+        "displayName": "Ink-green rail",
+        "tonalRamp": [
+          "oklch(15.00% 0.0176 165.76)",
+          "oklch(26.43% 0.0176 165.76)",
+          "oklch(37.86% 0.0176 165.76)",
+          "oklch(49.29% 0.0176 165.76)",
+          "oklch(60.71% 0.0176 165.76)",
+          "oklch(72.14% 0.0176 165.76)",
+          "oklch(83.57% 0.0176 165.76)",
+          "oklch(95.00% 0.0176 165.76)"
+        ]
+      },
+      "rail-text": {
+        "role": "neutral",
+        "displayName": "Rail text",
+        "tonalRamp": [
+          "oklch(15.00% 0.0135 115.84)",
+          "oklch(26.43% 0.0135 115.84)",
+          "oklch(37.86% 0.0135 115.84)",
+          "oklch(49.29% 0.0135 115.84)",
+          "oklch(60.71% 0.0135 115.84)",
+          "oklch(72.14% 0.0135 115.84)",
+          "oklch(83.57% 0.0135 115.84)",
+          "oklch(95.00% 0.0135 115.84)"
+        ]
+      },
+      "rail-muted": {
+        "role": "neutral",
+        "displayName": "Secondary rail text",
+        "tonalRamp": [
+          "oklch(15.00% 0.0206 135.85)",
+          "oklch(26.43% 0.0206 135.85)",
+          "oklch(37.86% 0.0206 135.85)",
+          "oklch(49.29% 0.0206 135.85)",
+          "oklch(60.71% 0.0206 135.85)",
+          "oklch(72.14% 0.0206 135.85)",
+          "oklch(83.57% 0.0206 135.85)",
+          "oklch(95.00% 0.0206 135.85)"
+        ]
+      },
+      "rail-hover": {
+        "role": "primary",
+        "displayName": "Rail hover",
+        "tonalRamp": [
+          "oklch(15.00% 0.0251 158.43)",
+          "oklch(26.43% 0.0251 158.43)",
+          "oklch(37.86% 0.0251 158.43)",
+          "oklch(49.29% 0.0251 158.43)",
+          "oklch(60.71% 0.0251 158.43)",
+          "oklch(72.14% 0.0251 158.43)",
+          "oklch(83.57% 0.0251 158.43)",
+          "oklch(95.00% 0.0251 158.43)"
+        ]
+      },
+      "rail-active": {
+        "role": "primary",
+        "displayName": "Rail selection",
+        "tonalRamp": [
+          "oklch(15.00% 0.0346 154.01)",
+          "oklch(26.43% 0.0346 154.01)",
+          "oklch(37.86% 0.0346 154.01)",
+          "oklch(49.29% 0.0346 154.01)",
+          "oklch(60.71% 0.0346 154.01)",
+          "oklch(72.14% 0.0346 154.01)",
+          "oklch(83.57% 0.0346 154.01)",
+          "oklch(95.00% 0.0346 154.01)"
+        ]
+      },
+      "action": {
+        "role": "primary",
+        "displayName": "Action green",
+        "tonalRamp": [
+          "oklch(15.00% 0.0636 158.44)",
+          "oklch(26.43% 0.0636 158.44)",
+          "oklch(37.86% 0.0636 158.44)",
+          "oklch(49.29% 0.0636 158.44)",
+          "oklch(60.71% 0.0636 158.44)",
+          "oklch(72.14% 0.0636 158.44)",
+          "oklch(83.57% 0.0636 158.44)",
+          "oklch(95.00% 0.0636 158.44)"
+        ]
+      },
+      "action-hover": {
+        "role": "primary",
+        "displayName": "Action hover",
+        "tonalRamp": [
+          "oklch(15.00% 0.0589 157.24)",
+          "oklch(26.43% 0.0589 157.24)",
+          "oklch(37.86% 0.0589 157.24)",
+          "oklch(49.29% 0.0589 157.24)",
+          "oklch(60.71% 0.0589 157.24)",
+          "oklch(72.14% 0.0589 157.24)",
+          "oklch(83.57% 0.0589 157.24)",
+          "oklch(95.00% 0.0589 157.24)"
+        ]
+      },
+      "selected": {
+        "role": "primary",
+        "displayName": "Selected sage",
+        "tonalRamp": [
+          "oklch(15.00% 0.0142 128.63)",
+          "oklch(26.43% 0.0142 128.63)",
+          "oklch(37.86% 0.0142 128.63)",
+          "oklch(49.29% 0.0142 128.63)",
+          "oklch(60.71% 0.0142 128.63)",
+          "oklch(72.14% 0.0142 128.63)",
+          "oklch(83.57% 0.0142 128.63)",
+          "oklch(95.00% 0.0142 128.63)"
+        ]
+      },
+      "brass": {
+        "role": "secondary",
+        "displayName": "Restrained brass",
+        "tonalRamp": [
+          "oklch(15.00% 0.0727 76.38)",
+          "oklch(26.43% 0.0727 76.38)",
+          "oklch(37.86% 0.0727 76.38)",
+          "oklch(49.29% 0.0727 76.38)",
+          "oklch(60.71% 0.0727 76.38)",
+          "oklch(72.14% 0.0727 76.38)",
+          "oklch(83.57% 0.0727 76.38)",
+          "oklch(95.00% 0.0727 76.38)"
+        ]
+      },
+      "brass-light": {
+        "role": "secondary",
+        "displayName": "Light brass",
+        "tonalRamp": [
+          "oklch(15.00% 0.0598 82.93)",
+          "oklch(26.43% 0.0598 82.93)",
+          "oklch(37.86% 0.0598 82.93)",
+          "oklch(49.29% 0.0598 82.93)",
+          "oklch(60.71% 0.0598 82.93)",
+          "oklch(72.14% 0.0598 82.93)",
+          "oklch(83.57% 0.0598 82.93)",
+          "oklch(95.00% 0.0598 82.93)"
+        ]
+      },
+      "brass-surface": {
+        "role": "secondary",
+        "displayName": "Brass inset",
+        "tonalRamp": [
+          "oklch(15.00% 0.0221 89.79)",
+          "oklch(26.43% 0.0221 89.79)",
+          "oklch(37.86% 0.0221 89.79)",
+          "oklch(49.29% 0.0221 89.79)",
+          "oklch(60.71% 0.0221 89.79)",
+          "oklch(72.14% 0.0221 89.79)",
+          "oklch(83.57% 0.0221 89.79)",
+          "oklch(95.00% 0.0221 89.79)"
+        ]
+      },
+      "danger": {
+        "role": "secondary",
+        "displayName": "Recovery red",
+        "tonalRamp": [
+          "oklch(15.00% 0.1222 30.41)",
+          "oklch(26.43% 0.1222 30.41)",
+          "oklch(37.86% 0.1222 30.41)",
+          "oklch(49.29% 0.1222 30.41)",
+          "oklch(60.71% 0.1222 30.41)",
+          "oklch(72.14% 0.1222 30.41)",
+          "oklch(83.57% 0.1222 30.41)",
+          "oklch(95.00% 0.1222 30.41)"
+        ]
+      },
+      "danger-surface": {
+        "role": "secondary",
+        "displayName": "Recovery inset",
+        "tonalRamp": [
+          "oklch(15.00% 0.0144 50.80)",
+          "oklch(26.43% 0.0144 50.80)",
+          "oklch(37.86% 0.0144 50.80)",
+          "oklch(49.29% 0.0144 50.80)",
+          "oklch(60.71% 0.0144 50.80)",
+          "oklch(72.14% 0.0144 50.80)",
+          "oklch(83.57% 0.0144 50.80)",
+          "oklch(95.00% 0.0144 50.80)"
+        ]
+      },
+      "track": {
+        "role": "neutral",
+        "displayName": "Probability track",
+        "tonalRamp": [
+          "oklch(15.00% 0.0168 125.30)",
+          "oklch(26.43% 0.0168 125.30)",
+          "oklch(37.86% 0.0168 125.30)",
+          "oklch(49.29% 0.0168 125.30)",
+          "oklch(60.71% 0.0168 125.30)",
+          "oklch(72.14% 0.0168 125.30)",
+          "oklch(83.57% 0.0168 125.30)",
+          "oklch(95.00% 0.0168 125.30)"
+        ]
+      },
+      "skeleton": {
+        "role": "neutral",
+        "displayName": "Loading placeholder",
+        "tonalRamp": [
+          "oklch(15.00% 0.0137 120.29)",
+          "oklch(26.43% 0.0137 120.29)",
+          "oklch(37.86% 0.0137 120.29)",
+          "oklch(49.29% 0.0137 120.29)",
+          "oklch(60.71% 0.0137 120.29)",
+          "oklch(72.14% 0.0137 120.29)",
+          "oklch(83.57% 0.0137 120.29)",
+          "oklch(95.00% 0.0137 120.29)"
+        ]
+      },
+      "dark-canvas": {
+        "role": "neutral",
+        "displayName": "Dark: Warm stone canvas",
+        "tonalRamp": [
+          "oklch(15.00% 0.0118 156.11)",
+          "oklch(26.43% 0.0118 156.11)",
+          "oklch(37.86% 0.0118 156.11)",
+          "oklch(49.29% 0.0118 156.11)",
+          "oklch(60.71% 0.0118 156.11)",
+          "oklch(72.14% 0.0118 156.11)",
+          "oklch(83.57% 0.0118 156.11)",
+          "oklch(95.00% 0.0118 156.11)"
+        ]
+      },
+      "dark-surface": {
+        "role": "neutral",
+        "displayName": "Dark: Pale work surface",
+        "tonalRamp": [
+          "oklch(15.00% 0.0182 151.66)",
+          "oklch(26.43% 0.0182 151.66)",
+          "oklch(37.86% 0.0182 151.66)",
+          "oklch(49.29% 0.0182 151.66)",
+          "oklch(60.71% 0.0182 151.66)",
+          "oklch(72.14% 0.0182 151.66)",
+          "oklch(83.57% 0.0182 151.66)",
+          "oklch(95.00% 0.0182 151.66)"
+        ]
+      },
+      "dark-surface-pure": {
+        "role": "neutral",
+        "displayName": "Dark: Pure surface",
+        "tonalRamp": [
+          "oklch(15.00% 0.0211 153.30)",
+          "oklch(26.43% 0.0211 153.30)",
+          "oklch(37.86% 0.0211 153.30)",
+          "oklch(49.29% 0.0211 153.30)",
+          "oklch(60.71% 0.0211 153.30)",
+          "oklch(72.14% 0.0211 153.30)",
+          "oklch(83.57% 0.0211 153.30)",
+          "oklch(95.00% 0.0211 153.30)"
+        ]
+      },
+      "dark-surface-soft": {
+        "role": "neutral",
+        "displayName": "Dark: Inset surface",
+        "tonalRamp": [
+          "oklch(15.00% 0.0223 150.17)",
+          "oklch(26.43% 0.0223 150.17)",
+          "oklch(37.86% 0.0223 150.17)",
+          "oklch(49.29% 0.0223 150.17)",
+          "oklch(60.71% 0.0223 150.17)",
+          "oklch(72.14% 0.0223 150.17)",
+          "oklch(83.57% 0.0223 150.17)",
+          "oklch(95.00% 0.0223 150.17)"
+        ]
+      },
+      "dark-ink": {
+        "role": "neutral",
+        "displayName": "Dark: Deep green ink",
+        "tonalRamp": [
+          "oklch(15.00% 0.0136 120.28)",
+          "oklch(26.43% 0.0136 120.28)",
+          "oklch(37.86% 0.0136 120.28)",
+          "oklch(49.29% 0.0136 120.28)",
+          "oklch(60.71% 0.0136 120.28)",
+          "oklch(72.14% 0.0136 120.28)",
+          "oklch(83.57% 0.0136 120.28)",
+          "oklch(95.00% 0.0136 120.28)"
+        ]
+      },
+      "dark-muted": {
+        "role": "neutral",
+        "displayName": "Dark: Muted olive-gray",
+        "tonalRamp": [
+          "oklch(15.00% 0.0260 132.18)",
+          "oklch(26.43% 0.0260 132.18)",
+          "oklch(37.86% 0.0260 132.18)",
+          "oklch(49.29% 0.0260 132.18)",
+          "oklch(60.71% 0.0260 132.18)",
+          "oklch(72.14% 0.0260 132.18)",
+          "oklch(83.57% 0.0260 132.18)",
+          "oklch(95.00% 0.0260 132.18)"
+        ]
+      },
+      "dark-subtle": {
+        "role": "neutral",
+        "displayName": "Dark: Legible subtle olive-gray",
+        "tonalRamp": [
+          "oklch(15.00% 0.0335 135.06)",
+          "oklch(26.43% 0.0335 135.06)",
+          "oklch(37.86% 0.0335 135.06)",
+          "oklch(49.29% 0.0335 135.06)",
+          "oklch(60.71% 0.0335 135.06)",
+          "oklch(72.14% 0.0335 135.06)",
+          "oklch(83.57% 0.0335 135.06)",
+          "oklch(95.00% 0.0335 135.06)"
+        ]
+      },
+      "dark-rule": {
+        "role": "neutral",
+        "displayName": "Dark: Fine rule",
+        "tonalRamp": [
+          "oklch(15.00% 0.0325 141.57)",
+          "oklch(26.43% 0.0325 141.57)",
+          "oklch(37.86% 0.0325 141.57)",
+          "oklch(49.29% 0.0325 141.57)",
+          "oklch(60.71% 0.0325 141.57)",
+          "oklch(72.14% 0.0325 141.57)",
+          "oklch(83.57% 0.0325 141.57)",
+          "oklch(95.00% 0.0325 141.57)"
+        ]
+      },
+      "dark-rule-strong": {
+        "role": "neutral",
+        "displayName": "Dark: Strong rule",
+        "tonalRamp": [
+          "oklch(15.00% 0.0384 138.28)",
+          "oklch(26.43% 0.0384 138.28)",
+          "oklch(37.86% 0.0384 138.28)",
+          "oklch(49.29% 0.0384 138.28)",
+          "oklch(60.71% 0.0384 138.28)",
+          "oklch(72.14% 0.0384 138.28)",
+          "oklch(83.57% 0.0384 138.28)",
+          "oklch(95.00% 0.0384 138.28)"
+        ]
+      },
+      "dark-rail": {
+        "role": "primary",
+        "displayName": "Dark: Ink-green rail",
+        "tonalRamp": [
+          "oklch(15.00% 0.0178 155.37)",
+          "oklch(26.43% 0.0178 155.37)",
+          "oklch(37.86% 0.0178 155.37)",
+          "oklch(49.29% 0.0178 155.37)",
+          "oklch(60.71% 0.0178 155.37)",
+          "oklch(72.14% 0.0178 155.37)",
+          "oklch(83.57% 0.0178 155.37)",
+          "oklch(95.00% 0.0178 155.37)"
+        ]
+      },
+      "dark-rail-text": {
+        "role": "neutral",
+        "displayName": "Dark: Rail text",
+        "tonalRamp": [
+          "oklch(15.00% 0.0136 120.28)",
+          "oklch(26.43% 0.0136 120.28)",
+          "oklch(37.86% 0.0136 120.28)",
+          "oklch(49.29% 0.0136 120.28)",
+          "oklch(60.71% 0.0136 120.28)",
+          "oklch(72.14% 0.0136 120.28)",
+          "oklch(83.57% 0.0136 120.28)",
+          "oklch(95.00% 0.0136 120.28)"
+        ]
+      },
+      "dark-rail-muted": {
+        "role": "neutral",
+        "displayName": "Dark: Secondary rail text",
+        "tonalRamp": [
+          "oklch(15.00% 0.0326 133.37)",
+          "oklch(26.43% 0.0326 133.37)",
+          "oklch(37.86% 0.0326 133.37)",
+          "oklch(49.29% 0.0326 133.37)",
+          "oklch(60.71% 0.0326 133.37)",
+          "oklch(72.14% 0.0326 133.37)",
+          "oklch(83.57% 0.0326 133.37)",
+          "oklch(95.00% 0.0326 133.37)"
+        ]
+      },
+      "dark-rail-hover": {
+        "role": "primary",
+        "displayName": "Dark: Rail hover",
+        "tonalRamp": [
+          "oklch(15.00% 0.0295 150.39)",
+          "oklch(26.43% 0.0295 150.39)",
+          "oklch(37.86% 0.0295 150.39)",
+          "oklch(49.29% 0.0295 150.39)",
+          "oklch(60.71% 0.0295 150.39)",
+          "oklch(72.14% 0.0295 150.39)",
+          "oklch(83.57% 0.0295 150.39)",
+          "oklch(95.00% 0.0295 150.39)"
+        ]
+      },
+      "dark-rail-active": {
+        "role": "primary",
+        "displayName": "Dark: Rail selection",
+        "tonalRamp": [
+          "oklch(15.00% 0.0388 148.69)",
+          "oklch(26.43% 0.0388 148.69)",
+          "oklch(37.86% 0.0388 148.69)",
+          "oklch(49.29% 0.0388 148.69)",
+          "oklch(60.71% 0.0388 148.69)",
+          "oklch(72.14% 0.0388 148.69)",
+          "oklch(83.57% 0.0388 148.69)",
+          "oklch(95.00% 0.0388 148.69)"
+        ]
+      },
+      "dark-action": {
+        "role": "primary",
+        "displayName": "Dark: Action green",
+        "tonalRamp": [
+          "oklch(15.00% 0.0602 145.74)",
+          "oklch(26.43% 0.0602 145.74)",
+          "oklch(37.86% 0.0602 145.74)",
+          "oklch(49.29% 0.0602 145.74)",
+          "oklch(60.71% 0.0602 145.74)",
+          "oklch(72.14% 0.0602 145.74)",
+          "oklch(83.57% 0.0602 145.74)",
+          "oklch(95.00% 0.0602 145.74)"
+        ]
+      },
+      "dark-action-hover": {
+        "role": "primary",
+        "displayName": "Dark: Action hover",
+        "tonalRamp": [
+          "oklch(15.00% 0.0527 141.66)",
+          "oklch(26.43% 0.0527 141.66)",
+          "oklch(37.86% 0.0527 141.66)",
+          "oklch(49.29% 0.0527 141.66)",
+          "oklch(60.71% 0.0527 141.66)",
+          "oklch(72.14% 0.0527 141.66)",
+          "oklch(83.57% 0.0527 141.66)",
+          "oklch(95.00% 0.0527 141.66)"
+        ]
+      },
+      "dark-selected": {
+        "role": "primary",
+        "displayName": "Dark: Selected sage",
+        "tonalRamp": [
+          "oklch(15.00% 0.0361 143.25)",
+          "oklch(26.43% 0.0361 143.25)",
+          "oklch(37.86% 0.0361 143.25)",
+          "oklch(49.29% 0.0361 143.25)",
+          "oklch(60.71% 0.0361 143.25)",
+          "oklch(72.14% 0.0361 143.25)",
+          "oklch(83.57% 0.0361 143.25)",
+          "oklch(95.00% 0.0361 143.25)"
+        ]
+      },
+      "dark-brass": {
+        "role": "secondary",
+        "displayName": "Dark: Restrained brass",
+        "tonalRamp": [
+          "oklch(15.00% 0.0691 84.33)",
+          "oklch(26.43% 0.0691 84.33)",
+          "oklch(37.86% 0.0691 84.33)",
+          "oklch(49.29% 0.0691 84.33)",
+          "oklch(60.71% 0.0691 84.33)",
+          "oklch(72.14% 0.0691 84.33)",
+          "oklch(83.57% 0.0691 84.33)",
+          "oklch(95.00% 0.0691 84.33)"
+        ]
+      },
+      "dark-brass-light": {
+        "role": "secondary",
+        "displayName": "Dark: Light brass",
+        "tonalRamp": [
+          "oklch(15.00% 0.0598 82.93)",
+          "oklch(26.43% 0.0598 82.93)",
+          "oklch(37.86% 0.0598 82.93)",
+          "oklch(49.29% 0.0598 82.93)",
+          "oklch(60.71% 0.0598 82.93)",
+          "oklch(72.14% 0.0598 82.93)",
+          "oklch(83.57% 0.0598 82.93)",
+          "oklch(95.00% 0.0598 82.93)"
+        ]
+      },
+      "dark-brass-surface": {
+        "role": "secondary",
+        "displayName": "Dark: Brass inset",
+        "tonalRamp": [
+          "oklch(15.00% 0.0259 91.82)",
+          "oklch(26.43% 0.0259 91.82)",
+          "oklch(37.86% 0.0259 91.82)",
+          "oklch(49.29% 0.0259 91.82)",
+          "oklch(60.71% 0.0259 91.82)",
+          "oklch(72.14% 0.0259 91.82)",
+          "oklch(83.57% 0.0259 91.82)",
+          "oklch(95.00% 0.0259 91.82)"
+        ]
+      },
+      "dark-danger": {
+        "role": "secondary",
+        "displayName": "Dark: Recovery red",
+        "tonalRamp": [
+          "oklch(15.00% 0.0727 39.22)",
+          "oklch(26.43% 0.0727 39.22)",
+          "oklch(37.86% 0.0727 39.22)",
+          "oklch(49.29% 0.0727 39.22)",
+          "oklch(60.71% 0.0727 39.22)",
+          "oklch(72.14% 0.0727 39.22)",
+          "oklch(83.57% 0.0727 39.22)",
+          "oklch(95.00% 0.0727 39.22)"
+        ]
+      },
+      "dark-danger-surface": {
+        "role": "secondary",
+        "displayName": "Dark: Recovery inset",
+        "tonalRamp": [
+          "oklch(15.00% 0.0335 36.60)",
+          "oklch(26.43% 0.0335 36.60)",
+          "oklch(37.86% 0.0335 36.60)",
+          "oklch(49.29% 0.0335 36.60)",
+          "oklch(60.71% 0.0335 36.60)",
+          "oklch(72.14% 0.0335 36.60)",
+          "oklch(83.57% 0.0335 36.60)",
+          "oklch(95.00% 0.0335 36.60)"
+        ]
+      },
+      "dark-track": {
+        "role": "neutral",
+        "displayName": "Dark: Probability track",
+        "tonalRamp": [
+          "oklch(15.00% 0.0415 137.29)",
+          "oklch(26.43% 0.0415 137.29)",
+          "oklch(37.86% 0.0415 137.29)",
+          "oklch(49.29% 0.0415 137.29)",
+          "oklch(60.71% 0.0415 137.29)",
+          "oklch(72.14% 0.0415 137.29)",
+          "oklch(83.57% 0.0415 137.29)",
+          "oklch(95.00% 0.0415 137.29)"
+        ]
+      },
+      "dark-skeleton": {
+        "role": "neutral",
+        "displayName": "Dark: Loading placeholder",
+        "tonalRamp": [
+          "oklch(15.00% 0.0367 137.57)",
+          "oklch(26.43% 0.0367 137.57)",
+          "oklch(37.86% 0.0367 137.57)",
+          "oklch(49.29% 0.0367 137.57)",
+          "oklch(60.71% 0.0367 137.57)",
+          "oklch(72.14% 0.0367 137.57)",
+          "oklch(83.57% 0.0367 137.57)",
+          "oklch(95.00% 0.0367 137.57)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "headline": {
+        "displayName": "Editorial page heading",
+        "purpose": "Instrument Serif h1 on desktop; switches to headline-mobile at 720px."
+      },
+      "headline-mobile": {
+        "displayName": "Mobile page heading",
+        "purpose": "Instrument Serif h1 at viewport widths up to 720px."
+      },
+      "title": {
+        "displayName": "Panel title",
+        "purpose": "Medium Plex headings for queue and evidence panels."
+      },
+      "body": {
+        "displayName": "Interface body",
+        "purpose": "Root Plex interface rhythm; dense data and prose have observed size overrides."
+      },
+      "label": {
+        "displayName": "Control label",
+        "purpose": "Medium Plex form labels, with regular-weight metadata alongside."
+      },
+      "button": {
+        "displayName": "Action label",
+        "purpose": "Medium Plex button and action typography."
+      },
+      "summary": {
+        "displayName": "Summary figure",
+        "purpose": "Instrument Serif summary values; becomes 31px on mobile."
+      },
+      "score": {
+        "displayName": "Buyer probability",
+        "purpose": "Instrument Serif probability, with 48px mobile-sheet override."
+      },
+      "chart-axis": {
+        "displayName": "Chart label",
+        "purpose": "Unstroked Plex in SVG viewBox units; 19 mobile / 21 narrow-screen evidence units."
+      }
+    },
+    "shadows": [
+      {
+        "name": "panel-ambient",
+        "value": "0 4px 22px rgb(42 48 34 / 3%)",
+        "purpose": "Light-theme workbench, queue, inspector and evidence surfaces through --shadow."
+      },
+      {
+        "name": "panel-dark",
+        "value": "none",
+        "purpose": "Dark theme uses tonal layers and borders instead of the ambient panel shadow."
+      },
+      {
+        "name": "buyer-sheet",
+        "value": "0 -12px 50px rgb(0 0 0 / 14%)",
+        "purpose": "Structural elevation for the native modal buyer sheet."
+      },
+      {
+        "name": "mobile-navigation",
+        "value": "0 -4px 20px rgb(0 0 0 / 3%)",
+        "purpose": "Faint separation above fixed bottom navigation."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Shared control, navigation and sheet easing."
+      },
+      {
+        "name": "control-feedback",
+        "value": "150ms var(--ease)",
+        "purpose": "CSS button backgrounds, borders, icon colors, fields and row hover."
+      },
+      {
+        "name": "navigation-selection",
+        "value": "220ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Motion shared navigation indicator; zero duration under reduced motion."
+      },
+      {
+        "name": "view-opacity",
+        "value": "120ms",
+        "purpose": "AnimatePresence view opacity; zero duration under reduced motion."
+      },
+      {
+        "name": "buyer-detail",
+        "value": "160ms; entry translateY(5px)",
+        "purpose": "Buyer-detail continuity; zero duration and no translation under reduced motion."
+      },
+      {
+        "name": "buyer-sheet",
+        "value": "200ms cubic-bezier(0.16, 1, 0.3, 1); entry translateY(32px); exit translateY(20px)",
+        "purpose": "Native modal sheet continuity; zero duration and no translation under reduced motion."
+      },
+      {
+        "name": "outcome-reveal",
+        "value": "220ms; opacity 0.4 to 1; clip-path inset(0 0 100% 0) to inset(0)",
+        "purpose": "Explicit observed-summary disclosure without interpolating numeric values; initial animation skipped and duration zero under reduced motion."
+      },
+      {
+        "name": "evidence-line",
+        "value": "450ms easeOut; pathLength 0 to 1",
+        "purpose": "Selected weekly evidence line; reduced motion skips the initial draw through initial=false and MotionConfig."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "MotionConfig reducedMotion=\"user\"; useReducedMotion; CSS transition-duration:0ms and animation:none",
+        "purpose": "Remove spatial and CSS animation while preserving state labels, exact values and operable recovery."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide-desktop (min-width)",
+        "value": "1560px"
+      },
+      {
+        "name": "single-evidence-column (max-width)",
+        "value": "1380px"
+      },
+      {
+        "name": "icon-rail (max-width)",
+        "value": "1279px"
+      },
+      {
+        "name": "modal-inspection (max-width)",
+        "value": "1100px"
+      },
+      {
+        "name": "two-column-controls (max-width)",
+        "value": "900px"
+      },
+      {
+        "name": "mobile-shell (max-width)",
+        "value": "720px"
+      },
+      {
+        "name": "narrow-mobile (max-width)",
+        "value": "374px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "description": "Filled recovery or confirmation action with a 44px minimum target.",
+      "html": "<button class=\"ds-button ds-primary\">Retry loading</button>",
+      "css": ".ds-button{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:11px 17px;min-height:44px;border:1px solid var(--rule-strong,#cdd2c5);border-radius:6px;background:var(--surface,#fffefa);color:var(--ink,#222e27);font:500 13px/1.5 Plex,system-ui,sans-serif;cursor:pointer;transition:background 150ms var(--ease,cubic-bezier(0.16,1,0.3,1)),border-color 150ms var(--ease,cubic-bezier(0.16,1,0.3,1)),box-shadow 150ms var(--ease,cubic-bezier(0.16,1,0.3,1))}.ds-button:hover:not(:disabled){background:var(--selected,#eef3e9);border-color:var(--action,#315d45)}.ds-button:focus-visible{outline:2px solid var(--brass,#886a3d);outline-offset:4px}.ds-button:disabled{opacity:.4;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-button{transition:none}}.ds-primary{background:var(--action,#315d45);color:var(--surface,#fffefa);border-color:var(--action,#315d45)}.ds-primary:hover:not(:disabled){background:var(--action-hover,#244b35)}",
+      "refersTo": "button-primary"
+    },
+    {
+      "name": "Secondary action",
+      "kind": "button",
+      "description": "Quiet bordered action on the work surface.",
+      "html": "<button class=\"ds-button\">Clear filters</button>",
+      "css": ".ds-button{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:11px 17px;min-height:44px;border:1px solid var(--rule-strong,#cdd2c5);border-radius:6px;background:var(--surface,#fffefa);color:var(--ink,#222e27);font:500 13px/1.5 Plex,system-ui,sans-serif;cursor:pointer;transition:background 150ms var(--ease,cubic-bezier(0.16,1,0.3,1)),border-color 150ms var(--ease,cubic-bezier(0.16,1,0.3,1)),box-shadow 150ms var(--ease,cubic-bezier(0.16,1,0.3,1))}.ds-button:hover:not(:disabled){background:var(--selected,#eef3e9);border-color:var(--action,#315d45)}.ds-button:focus-visible{outline:2px solid var(--brass,#886a3d);outline-offset:4px}.ds-button:disabled{opacity:.4;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-button{transition:none}}",
+      "refersTo": "button-secondary"
+    },
+    {
+      "name": "Outcome reveal",
+      "kind": "button",
+      "description": "Ink action; aria-pressed=true demonstrates the brass revealed state. This preview carries no experiment data.",
+      "html": "<button class=\"ds-button ds-reveal\" aria-pressed=\"true\"><svg class=\"ds-eye\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/></svg>Hide outcomes</button>",
+      "css": ".ds-button{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:11px 17px;min-height:44px;border:1px solid var(--rule-strong,#cdd2c5);border-radius:6px;background:var(--surface,#fffefa);color:var(--ink,#222e27);font:500 13px/1.5 Plex,system-ui,sans-serif;cursor:pointer;transition:background 150ms var(--ease,cubic-bezier(0.16,1,0.3,1)),border-color 150ms var(--ease,cubic-bezier(0.16,1,0.3,1)),box-shadow 150ms var(--ease,cubic-bezier(0.16,1,0.3,1))}.ds-button:hover:not(:disabled){background:var(--selected,#eef3e9);border-color:var(--action,#315d45)}.ds-button:focus-visible{outline:2px solid var(--brass,#886a3d);outline-offset:4px}.ds-button:disabled{opacity:.4;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-button{transition:none}}.ds-reveal{background:var(--ink,#222e27);color:var(--surface,#fffefa);border-color:var(--ink,#222e27);padding-inline:18px}.ds-reveal:hover:not(:disabled){background:var(--action,#315d45);color:var(--surface,#fffefa)}.ds-reveal[aria-pressed=true]{background:var(--brass-surface,#f5efdf);color:var(--brass,#886a3d);border-color:var(--brass,#886a3d)}.ds-reveal[aria-pressed=true]:hover{background:var(--brass-surface,#f5efdf);color:var(--ink,#222e27)}.ds-eye{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linejoin:round}",
+      "refersTo": "button-reveal"
+    },
+    {
+      "name": "Buyer search",
+      "kind": "input",
+      "description": "Native numeric-ID search with the current field, placeholder, hover and brass-focus treatments.",
+      "html": "<label class=\"ds-search\"><span>Search buyer ID</span><span class=\"ds-search-wrap\"><svg class=\"ds-search-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg><input type=\"search\" inputmode=\"numeric\" placeholder=\"Find a buyer by ID\"></span></label>",
+      "css": ".ds-search{display:grid;gap:7px;color:var(--muted,#646b61);font:500 12px/1.5 Plex,system-ui,sans-serif;letter-spacing:.1px}.ds-search-wrap{position:relative;display:block}.ds-search-icon{position:absolute;left:12px;top:14px;width:16px;height:16px;fill:none;stroke:var(--subtle,#686f64);stroke-width:1.7}.ds-search input{height:44px;width:100%;min-width:0;padding:9px 12px 9px 36px;border:1px solid var(--rule-strong,#cdd2c5);border-radius:5px;background:var(--surface,#fffefa);color:var(--ink,#222e27);font:400 12px/1.5 Plex,system-ui,sans-serif;caret-color:var(--action,#315d45);transition:border-color 150ms var(--ease,cubic-bezier(0.16,1,0.3,1))}.ds-search input::placeholder{color:var(--subtle,#686f64)}.ds-search input:hover{border-color:var(--action,#315d45)}.ds-search input:focus-visible{outline:2px solid var(--brass,#886a3d);outline-offset:4px}@media(prefers-reduced-motion:reduce){.ds-search input{transition:none}}",
+      "refersTo": "input"
+    },
+    {
+      "name": "Persistent navigation",
+      "kind": "nav",
+      "description": "Rail destinations with an outlined active surface. Production adds shared-layout motion and a labeled mobile bottom-navigation variant.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Main navigation\"><button aria-current=\"page\"><svg class=\"ds-nav-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 5h16M7 12h10M10 19h4\"/></svg>Review queue<span class=\"ds-nav-dot\"></span></button><button>Model evidence</button><button>Method &amp; source</button></nav>",
+      "css": ".ds-nav{display:grid;gap:8px;padding:18px;background:var(--rail,#232e29)}.ds-nav button{position:relative;display:flex;align-items:center;gap:12px;min-height:48px;padding:12px 16px;border:1px solid transparent;border-radius:7px;background:transparent;color:var(--rail-muted,#b7c0b3);text-align:left;font:500 13px/1.5 Plex,system-ui,sans-serif;cursor:pointer}.ds-nav button:hover{background:var(--rail-hover,#2e3d34);color:var(--rail-text,#eaece2)}.ds-nav button[aria-current=page]{background:var(--rail-active,#35493b);border-color:#4c5e47;color:var(--rail-text,#eaece2)}.ds-nav button:focus-visible{outline:2px solid var(--brass-light,#dcc69d);outline-offset:4px}.ds-nav-dot{width:4px;height:4px;border-radius:50%;background:var(--brass-light,#dcc69d);margin-left:auto}.ds-nav-icon{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}",
+      "refersTo": "nav-item"
+    },
+    {
+      "name": "Selected model tag",
+      "kind": "chip",
+      "description": "Noninteractive evidence label for the frozen development winner.",
+      "html": "<span class=\"ds-tag\">Selected</span>",
+      "css": ".ds-tag{display:inline-flex;align-items:center;gap:3px;padding:2px 5px;border:1px solid var(--rule-strong,#cdd2c5);border-radius:4px;color:var(--action,#315d45);font:500 12px/1.5 Plex,system-ui,sans-serif;white-space:nowrap}@media(max-width:720px){.ds-tag{font-size:11px;padding:1px 4px}}",
+      "refersTo": "status-tag"
+    },
+    {
+      "name": "Evidence work surface",
+      "kind": "card",
+      "description": "Fine bordered, softly elevated panel with distinct header, content and footer regions.",
+      "html": "<section class=\"ds-panel\"><div class=\"ds-panel-heading\"><h2>Performance through time</h2><p>Measured evidence from the frozen development choice.</p></div><div class=\"ds-panel-content\">Exact weekly values remain available with the chart.</div></section>",
+      "css": ".ds-panel{min-width:0;overflow:hidden;border:1px solid var(--rule,#e3e5da);border-radius:var(--radius,10px);background:var(--surface,#fffefa);color:var(--ink,#222e27);box-shadow:var(--shadow,0 4px 22px rgb(42 48 34 / 3%));font:400 14px/1.5 Plex,system-ui,sans-serif}.ds-panel-heading{padding:21px 22px 17px}.ds-panel-heading h2{margin:0;font-size:16px;font-weight:500;letter-spacing:-.15px;line-height:1.4}.ds-panel-heading p{margin:5px 0 0;color:var(--muted,#646b61);font-size:12px;line-height:1.6}.ds-panel-content{padding:0 22px 20px;font-size:12px;color:var(--muted,#646b61)}@media(max-width:720px){.ds-panel-heading{padding:18px 16px 15px}.ds-panel-heading h2{font-size:15px}.ds-panel-content{padding:0 16px 17px}}",
+      "refersTo": "evidence-panel"
+    },
+    {
+      "name": "Probability indicator",
+      "kind": "custom",
+      "description": "Numeric probability with a subordinate bar. This 75% value is an illustrative style sample only.",
+      "html": "<div class=\"ds-probability\" aria-label=\"Illustrative probability styling sample\"><span>75.0%</span><span class=\"ds-track\" aria-hidden=\"true\"><span style=\"width:75%\"></span></span></div>",
+      "css": ".ds-probability{display:flex;align-items:center;gap:9px;color:var(--ink,#222e27);font:500 13px/1.5 Plex,system-ui,sans-serif;font-variant-numeric:tabular-nums}.ds-probability>span:first-child{min-width:43px}.ds-track{display:block;width:48px;height:4px;overflow:hidden;border-radius:2px;background:var(--track,#e6ebdf)}.ds-track>span{display:block;height:100%;border-radius:2px;background:var(--action,#315d45)}@media(max-width:720px){.ds-probability{gap:7px;font-size:12px}.ds-probability>span:first-child{min-width:37px}.ds-track{width:36px;height:3px}}@media(max-width:374px){.ds-track{width:26px}}"
+    },
+    {
+      "name": "Chart axis and series",
+      "kind": "custom",
+      "description": "Isolated chart styling with unstroked labels, quiet grid and solid-green/dashed-brass distinction. Paths are illustrative styling samples.",
+      "html": "<svg class=\"ds-chart\" viewBox=\"0 0 500 130\" role=\"img\" aria-label=\"Illustrative chart styling sample\"><line class=\"ds-grid\" x1=\"48\" x2=\"478\" y1=\"35\" y2=\"35\"/><text x=\"36\" y=\"40\" text-anchor=\"end\">0.50</text><path class=\"ds-baseline\" d=\"M48 85 160 75 270 81 375 65 478 70\"/><path class=\"ds-series\" d=\"M48 65 160 52 270 61 375 36 478 45\"/><text x=\"48\" y=\"120\">5 Sept</text><text x=\"478\" y=\"120\" text-anchor=\"end\">28 Nov</text></svg>",
+      "css": ".ds-chart{display:block;width:100%;height:auto;overflow:visible}.ds-chart text{font:14px Plex,system-ui,sans-serif;fill:var(--muted,#646b61);stroke:none}.ds-grid{stroke:var(--rule,#e3e5da);stroke-width:1}.ds-series{fill:none;stroke:var(--action,#315d45);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}.ds-baseline{fill:none;stroke:var(--brass,#886a3d);stroke-width:2;stroke-dasharray:4 5}@media(max-width:720px){.ds-chart text{font-size:19px}}@media(max-width:374px){.ds-chart text{font-size:21px}}"
+    },
+    {
+      "name": "Buyer sheet",
+      "kind": "custom",
+      "description": "Static open-dialog appearance preview; production uses showModal, focus containment, Escape, paging and return focus.",
+      "html": "<dialog open class=\"ds-sheet\" aria-label=\"Buyer sheet style sample\"><div class=\"ds-sheet-toolbar\"><span>Buyer intelligence</span><button class=\"ds-close\" aria-label=\"Close profile styling sample\"><svg class=\"ds-close-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m18 6-12 12M6 6l12 12\"/></svg></button></div><div class=\"ds-sheet-content\"><h2>Buyer profile</h2><div class=\"ds-cutoff\">History stops here.<p>Only records before the selected snapshot.</p></div></div></dialog>",
+      "css": ".ds-sheet{position:relative;padding:0;margin:0 auto;width:calc(100% - 28px);max-width:580px;max-height:88dvh;overflow-y:auto;border:1px solid var(--rule,#e3e5da);border-bottom:0;border-radius:16px 16px 0 0;background:var(--surface,#fffefa);color:var(--ink,#222e27);box-shadow:0 -12px 50px rgb(0 0 0 / 14%);font:400 12px/1.5 Plex,system-ui,sans-serif}.ds-sheet::backdrop{background:rgb(14 23 17 / 48%);backdrop-filter:blur(3px)}.ds-sheet-toolbar{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;padding:10px 18px 10px 24px;border-bottom:1px solid var(--rule,#e3e5da);background:var(--surface,#fffefa);color:var(--muted,#646b61)}.ds-close{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;min-height:44px;border:0;border-radius:6px;background:transparent;color:var(--muted,#646b61);cursor:pointer;transition:background 150ms var(--ease,cubic-bezier(0.16,1,0.3,1)),color 150ms var(--ease,cubic-bezier(0.16,1,0.3,1))}.ds-close:hover{background:var(--selected,#eef3e9);color:var(--ink,#222e27)}.ds-close:focus-visible{outline:2px solid var(--brass,#886a3d);outline-offset:4px}.ds-close-icon{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round}.ds-sheet-content{padding:20px 24px 32px}.ds-sheet h2{margin:0 0 21px;font-size:21px;line-height:1.4;letter-spacing:-.3px;font-weight:500}.ds-cutoff{padding:13px;border:1px solid var(--rule,#e3e5da);border-radius:6px;background:var(--surface-soft,#f8f7f2);font-weight:500}.ds-cutoff p{margin:3px 0 0;color:var(--muted,#646b61);font-weight:400;line-height:1.7}@media(max-width:720px){.ds-sheet{width:100%;border-left:0;border-right:0}.ds-sheet-content{padding:19px 23px 30px}}@media(prefers-reduced-motion:reduce){.ds-close{transition:none}}",
+      "refersTo": "buyer-sheet"
+    }
+  ],
+  "narrative": {
+    "northStar": "The historical review desk",
+    "overview": "ReorderIQ is a considered analytical desk: warm stone surrounds pale work surfaces, a deep ink-green rail anchors orientation, and restrained brass marks boundaries and attention. Instrument Serif gives headings and summary figures an editorial voice; Plex keeps controls, tables and factual context precise. The queue remains the main working artifact, paired with a buyer history inspector rather than a field of interchangeable cards.\n\nThe premium character comes from quiet material separation, deliberate type contrast and responsive continuity. Light and dark themes retain the same hierarchy and semantic assignments. Motion explains selection, navigation and the explicit transition from a historical forecast to observed outcomes; measured numbers appear directly, without animated intermediate values.\n\nThis v0.2 record is extracted from the React frontend, Vite 8 production source, Motion 14 components and supplied refinement screenshots for the local FastAPI application. It refreshes the incumbent desk. The unavailable Impeccable launcher produced no composition, FORM or QUALITYBAR artifacts; this document does not imply formal visual-world approval.",
+    "keyCharacteristics": [
+      "Warm stone, deep ink green and restrained brass in matching light and dark themes.",
+      "Editorial serif headings and summary figures above compact Plex controls and data.",
+      "Fine rules, modest rounding and diffuse surface shadows in light mode.",
+      "A ranked buyer queue with a sticky inspector or native modal buyer sheet.",
+      "Short, purposeful motion and explicit loading, error, empty and hidden-outcome states."
+    ],
+    "rules": [
+      {
+        "name": "The Selection Rule",
+        "body": "Pair selection tint with explicit state or text; color is an additional cue.",
+        "section": "colors"
+      },
+      {
+        "name": "The Theme Parity Rule",
+        "body": "Keep semantic color roles identical across themes and bind components to the live CSS variables.",
+        "section": "colors"
+      },
+      {
+        "name": "The Unstroked Label Rule",
+        "body": "Keep SVG chart text unstroked and verify its rendered reading size after responsive scaling.",
+        "section": "typography"
+      },
+      {
+        "name": "The Measured Number Rule",
+        "body": "Update figures directly to the measured value; motion may reveal the figure but must not invent intermediate statistics.",
+        "section": "typography"
+      },
+      {
+        "name": "The Contained Overflow Rule",
+        "body": "Keep wide tables scrollable within their own containers and preserve page-width containment.",
+        "section": "layout"
+      },
+      {
+        "name": "The Purposeful Motion Rule",
+        "body": "Animate navigation, inspection and explicit outcome disclosure; keep measured values and recovery immediately usable.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do preserve warm stone, deep ink green and brass through live light/dark semantic variables.",
+      "Do use Instrument Serif for editorial headings and prominent facts, and Plex for interface text and dense data.",
+      "Do keep buyer IDs, probabilities, prediction boundaries and outcome state explicit beside graphical cues.",
+      "Do retain labeled native controls, visible keyboard focus, 44px control targets and native modal focus/scroll restoration.",
+      "Do keep chart labels unstroked, exact values available and wide tables contained.",
+      "Do bind rows, summaries, buyer detail and exports to the successful current query, with visible loading and retry states.",
+      "Do respect reduced motion while preserving labels, measured values and outcome-disclosure meaning."
+    ],
+    "donts": [
+      "Don't replace numeric probabilities or written outcome states with color-only or bar-only encodings.",
+      "Don't animate statistics through invented intermediate values or use row-by-row entrance delays.",
+      "Don't render stale responses or export a prior query as current evidence.",
+      "Don't restore the earlier low-contrast subtle text color or inherit outline-icon stroke into SVG chart text.",
+      "Don't force the desktop inspector, icon rail or two-column evidence charts below their observed breakpoints.",
+      "Don't imply that purchase propensity measures the causal effect of contact, or present illustrative component previews as experiment data."
+    ]
+  }
+}

@@ -1,0 +1,3 @@
+Run: 20261029T092203635364Z-627414f3
+UCI Online Retail II, Chen (2012), DOI:10.24432/C5CG6D, CC BY 4.0.
+Observational purchases, not outreach effects.

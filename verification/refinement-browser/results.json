@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "checks": [
+    "real experiment loads with hidden outcomes and keyboard skip navigation",
+    "explicit reveal, eligible-population context and date reset/steppers work",
+    "model/capacity switching and current buyer detail stay aligned",
+    "empty search provides explicit clear-filter recovery",
+    "failed queries cannot export stale data; retry restores a matching export",
+    "exported CSV respects the current query and hidden-outcome state",
+    "frozen-model evidence is scoped correctly; charts are readable and keyboard inspectable",
+    "source audit, view URLs and browser back navigation work",
+    "mobile buyer sheet supports paging, trapped focus, Escape and trigger-focus restoration",
+    "all target viewport widths avoid page overflow; mobile evidence remains readable",
+    "explicit dark theme retains the measured data and layout",
+    "reduced-motion preference preserves reveal behavior without spatial animation"
+  ],
+  "javascript_errors": []
+}

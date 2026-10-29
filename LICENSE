@@ -1,0 +1,9 @@
+Copyright (c) 2026 Sameer Prasad. All rights reserved.
+
+Third-party materials retain their own licenses:
+- UCI Online Retail II dataset: Chen, D. (2012), CC BY 4.0, DOI:10.24432/C5CG6D.
+- IBM Plex Sans fonts: included OFL license in src/reorderiq/web/fonts/LICENSE.txt.
+- Instrument Serif fonts: included OFL license in src/reorderiq/web/ui/licenses/.
+- Bundled React, Motion and Lucide runtime components: their original notices are included in src/reorderiq/web/ui/licenses/.
+
+These third-party licenses do not alter the license of the original project code.

@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.png binary
+*.woff binary
+*.woff2 binary
+reports/figures/*.svg linguist-generated=true -whitespace
+src/reorderiq/web/ui/** linguist-generated=true
+.impeccable/design.json linguist-generated=true

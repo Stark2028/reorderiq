@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "checks": [
+    "real experiment, 50 buyers and pre-cutoff buyer history load",
+    "keyboard skip link receives first focus",
+    "explicit outcome reveal updates queue and summary",
+    "changing historical Monday hides future outcomes again",
+    "model, capacity and keyboard-operable buyer selection work",
+    "empty search has explicit recovery and clears stale buyer detail",
+    "CSV download respects hidden-outcome state",
+    "model comparison, temporal chart, calibration and cohort evidence render",
+    "methodology and real-data source audit render",
+    "failed queue request shows recovery; retry restores verified data",
+    "1440/1024/768/390px layouts have no page-level horizontal overflow",
+    "chart axis text has no inherited stroke and renders at least 11px on desktop/mobile"
+  ],
+  "javascript_errors": []
+}

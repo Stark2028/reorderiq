@@ -1,0 +1,16 @@
+{
+  "reference_run": "20261029T090037812967Z-968f8505",
+  "comparisons": [
+    {
+      "run": "20261029T090921039559Z-968f8505",
+      "all_prediction_values_identical_to_first_run": true,
+      "parquet_bytes_identical_to_first_run": false
+    },
+    {
+      "run": "20261029T092203635364Z-627414f3",
+      "all_prediction_values_identical_to_first_run": true,
+      "parquet_bytes_identical_to_first_run": true
+    }
+  ],
+  "note": "File serialization metadata can differ across cache paths; exact table values are compared separately."
+}
