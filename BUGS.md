@@ -90,7 +90,14 @@ Review verification: `python -m pytest -q -W error -p no:cacheprovider tests/tes
 - Fix: scripts/build_distribution.ps1 validates the absolute generated build path inside this project, refuses reparse points, removes that output and performs an isolated wheel build.
 - Regression: scripts/verify_distribution.py compares every packaged runtime file byte-for-byte with current source, checks bundled UI references/notices and verifies actual gzip/cache/version behavior.
 
-## Test fixture correction
+## B014 — Fresh CI environment required an explicit asyncio fixture loop scope (fixed)
+
+- Trigger: the first public GitHub Linux job ran pytest with warnings treated as errors in a fresh environment.
+- Effect: pytest-asyncio stopped during configuration because asyncio_default_fixture_loop_scope was unset; application tests did not execute.
+- Fix: declare function fixture-loop scope in pyproject.toml, preserving warnings-as-errors. The platform matrix no longer cancels its other runner on one failure.
+- Regression: rerun the complete local Python suite and the hosted Linux/Windows jobs; publication evidence records their actual results.
+
+## Original test fixture correction
 
 The initial synthetic candidate test assigned independent purchase rates and recency-based targets. Gamma-Poisson correctly triggered the negative calibration-slope guard. The fixture now provides aligned recency/repeat-frequency signal. The application guard is retained; this was not a real-data model failure.
 

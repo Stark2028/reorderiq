@@ -23,6 +23,7 @@ where = ["src"]
 reorderiq = ["sql/*.sql", "web/*.html", "web/fonts/*", "web/ui/index.html", "web/ui/assets/*", "web/ui/licenses/*"]
 
 [tool.pytest.ini_options]
+asyncio_default_fixture_loop_scope = "function"
 testpaths = ["tests"]
 pythonpath = ["src"]
 addopts = "-ra"
