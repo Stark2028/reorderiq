@@ -24,4 +24,4 @@ The recorded local refinement passes 42 Python regressions, four frontend reques
 
 ## Remaining scope
 
-Live retailer validation, an outreach experiment, authentication, scheduled retraining and hosted application deployment are future work. Public GitHub source publication does not imply application hosting or production validation.
+The portfolio demo is deployed at https://reorderiq.65.0.103.235.sslip.io on the existing AWS host, in a separate read-only container. The original experiment was independently reverified inside the container and twelve public browser flows passed with no JavaScript errors. See verification/DEPLOYMENT.md and deploy/aws/README.md for evidence, limits and rollback. Live retailer validation, an outreach experiment, authentication, scheduled retraining and high availability remain future work. Public portfolio hosting does not establish production validation.

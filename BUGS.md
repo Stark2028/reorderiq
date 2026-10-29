@@ -90,6 +90,14 @@ Review verification: `python -m pytest -q -W error -p no:cacheprovider tests/tes
 - Fix: scripts/build_distribution.ps1 validates the absolute generated build path inside this project, refuses reparse points, removes that output and performs an isolated wheel build.
 - Regression: scripts/verify_distribution.py compares every packaged runtime file byte-for-byte with current source, checks bundled UI references/notices and verifies actual gzip/cache/version behavior.
 
+## B017 — Hosted browser harness mixed two HTTP transports (fixed)
+
+Chromium loaded the public app and its APIs, and Python's HTTPS client also returned valid metadata, but the harness's separate Node `APIRequestContext` repeatedly reset its metadata connection. The date-stepper check now reads actual rendered date options in Chromium. It retains first/next-date assertions and exercises the same transport as the user; public API readiness and metadata are verified independently. No TLS checks are disabled.
+
+## B016 — Existing proxy bind mount referenced an older config inode (fixed)
+
+The first AWS activation validated a candidate containing both routes but reloaded `/etc/caddy/Caddyfile`, whose pre-existing Docker single-file mount referenced a different inode from the host path. Caddy reported unchanged configuration and the new hostname failed TLS, despite a healthy application. Reload the exact validated in-container candidate; persist the same contents at the host path for future container starts. Rollback likewise uses an explicit copied config. Verify the actual public TLS/API/browser behavior rather than equating a successful reload command with deployment readiness.
+
 ## B015 — Fresh pandas deprecated the weekday alias (fixed)
 
 Hosted Windows and Linux tests rejected `Timestamp.dayofweek` under warnings-as-errors. Use the equivalent supported `day_of_week` property in temporal-origin validation. Existing temporal and verification tests cover this path; no warning suppression or modeling change is introduced.

@@ -60,4 +60,6 @@ The user requested an error/improvement review and a highly refined premium fron
 
 ## Original finish criteria and future scope
 
+Deployment scope was subsequently authorized on 2026-10-29. A separate resource-bounded AWS container serves the verified frozen experiment through an additional HTTPS route on the existing EC2 host. No model tuning or experiment rerun is part of deployment. Preserve SagaAgent and document actual public verification and rollback in deploy/aws/README.md and verification/DEPLOYMENT.md.
+
 Finish requires an actual UCI run, checked leakage boundaries, reported honest candidate results, working queue/replay and documented local launch. Infrastructure scale, live retailer data, outreach experiments, product recommendation, deployment and authentication are future work. Do not add them to the critical path.

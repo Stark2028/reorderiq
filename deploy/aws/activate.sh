@@ -38,11 +38,13 @@ CADDY
 fi
 docker cp "$candidate" "$proxy":/tmp/reorderiq-Caddyfile
 docker exec "$proxy" caddy validate --config /tmp/reorderiq-Caddyfile --adapter caddyfile
-# Preserve the bind-mounted inode so the existing proxy sees the new contents.
+# Persist the config for future container starts. A pre-existing single-file bind
+# mount can still reference an older inode, so reload the exact validated copy.
 cat "$candidate" > "$config"
-if ! docker exec "$proxy" caddy reload --config /etc/caddy/Caddyfile --adapter caddyfile; then
+if ! docker exec "$proxy" caddy reload --config /tmp/reorderiq-Caddyfile --adapter caddyfile; then
     cat "$backup" > "$config"
-    docker exec "$proxy" caddy reload --config /etc/caddy/Caddyfile --adapter caddyfile
+    docker cp "$backup" "$proxy":/tmp/reorderiq-Caddyfile-rollback
+    docker exec "$proxy" caddy reload --config /tmp/reorderiq-Caddyfile-rollback --adapter caddyfile
     exit 1
 fi
 echo 'ReorderIQ healthy; HTTPS route activated. Existing proxy routes preserved.'

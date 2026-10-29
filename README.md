@@ -2,6 +2,8 @@
 
 [![Checks](https://github.com/Stark2028/reorderiq/actions/workflows/ci.yml/badge.svg)](https://github.com/Stark2028/reorderiq/actions/workflows/ci.yml)
 
+**[Open the live AWS demo](https://reorderiq.65.0.103.235.sslip.io)** · [Deployment and rollback](deploy/aws/README.md)
+
 **Which observed buyers are likely to order in the next seven days? Inspect the prediction, then replay what happened.**
 
 A complete local data science application: official retail transactions, SQL features, chronological model comparison, independent probability calibration, and a React/TypeScript review workspace with Framer Motion. Built as an independent portfolio study inspired by predictive buying research at Udaan.

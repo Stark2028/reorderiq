@@ -25,15 +25,15 @@ Tasks complete only after implementation and appropriate verification. See MEMOR
 - [x] Create the public GitHub repository and push main.
 - [x] Verify visibility, remote commit and hosted CI result (run 40882419709).
 
-## Remaining future work
-
 ## Hosted deployment — authorized 2026-10-29
 
 - [x] Inspect account access and existing host capacity.
-- [ ] Build an isolated, resource-bounded container with immutable verified artifacts.
-- [ ] Configure HTTPS without disrupting SagaAgent.
-- [ ] Verify public API, browser flows and document deployment/rollback.
+- [x] Build an isolated, resource-bounded container with immutable verified artifacts.
+- [x] Configure HTTPS without disrupting SagaAgent.
+- [x] Verify public API, twelve browser flows and document deployment/rollback.
+
+## Remaining future work
 
 - Real retailer-data validation on a new untouched period/source.
 - Randomized contact experiment before outreach-effect claims.
-- Authentication, deployment and scheduled data refresh if production hosting is requested.
+- Authentication, scheduled data refresh and high availability if production operation is requested.

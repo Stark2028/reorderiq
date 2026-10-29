@@ -64,14 +64,23 @@ def main():
         expect(page.locator("#reveal")).to_have_text("Hide outcomes")
         idle(page)
         expect(page.locator("#summary")).to_contain_text("of eligible buyers")
-        metadata = page.request.get(args.url + "/api/metadata").json()
-        page.locator("#date").select_option(metadata["dates"][0])
+        # Use the real rendered options: this check exercises browser navigation
+        # without introducing a separate Node HTTP client/TLS transport.
+        dates = page.locator("#date option").evaluate_all(
+            "options => options.map(option => option.value)"
+        )
+        assert len(dates) >= 2
+        metadata = page.evaluate(
+            "async () => { const response = await fetch('/api/metadata'); "
+            "if (!response.ok) throw new Error('Metadata unavailable'); return response.json(); }"
+        )
+        page.locator("#date").select_option(dates[0])
         expect(page.locator("#summary")).to_contain_text("Hidden")
         idle(page)
         assert page.get_by_role("button", name="Previous historical Monday").is_disabled()
         page.get_by_role("button", name="Next historical Monday").click()
         idle(page)
-        assert page.locator("#date").input_value() == metadata["dates"][1]
+        assert page.locator("#date").input_value() == dates[1]
         checks.append("explicit reveal, eligible-population context and date reset/steppers work")
         page.locator("#model").select_option("gamma_poisson")
         page.locator("#capacity").select_option("100")
