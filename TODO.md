@@ -23,7 +23,7 @@ Tasks complete only after implementation and appropriate verification. See MEMOR
 - [x] Inspect GitHub identity, repository availability and publication contents.
 - [x] Establish an independent ReorderIQ Git repository and review its staged files.
 - [x] Create the public GitHub repository and push main.
-- [ ] Verify visibility, remote commit and first hosted CI result.
+- [x] Verify visibility, remote commit and hosted CI result (run 40882419709).
 
 ## Remaining future work
 
